@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 20px;
+
+}
+
+section h2 {
+    color: #4CAF50;
+    margin-block: 10px;
+
+}
+
+section p {
+    margin-block: 10px;
+    font-weight: 200;
+}
+
+section ul {
+    margin-block: 10px;
+    font-weight: 200;
+
+}
+
+section ul li {
+    margin-block: 10px;
+
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+    border-radius: 6px;
+}
+
+form button:hover {
+    background-color: #07ee13;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    main {
+        max-width: 90%;
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+
+    section {
+        padding: 0 10px;
+        /* Add padding to sections for smaller screens */
+    }
+
+    form button {
+        width: 100%;
+        border-radius: 6px;
+    }
+}

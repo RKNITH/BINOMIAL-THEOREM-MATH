@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Theorem</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Binomial Theorem and Its Applications</h1>
+    </header>
+
+
+
+    <main>
+        <section id="history">
+            <h2>History of Binomial Theorem</h2>
+            <p>The binomial theorem has a rich history, tracing back to ancient mathematics and evolving through various
+                significant milestones:</p>
+            <ul>
+                <li>
+                    <b>Ancient Mathematics:</b>
+                    <p>The concept of binomial coefficients can be traced back to ancient Indian and Greek mathematics.
+                        In India, mathematician Pingala (circa 300 BCE) described a method for finding the number of
+                        combinations, which is a fundamental concept in the binomial theorem.</p>
+                </li>
+                <li>
+                    <b>11th Century:</b>
+                    <p>In the Islamic Golden Age, Persian mathematician Al-Karaji (953-1029) wrote about the binomial
+                        theorem and its coefficients. He provided a proof for the binomial theorem for positive integer
+                        exponents.</p>
+                </li>
+                <li>
+                    <b>17th Century:</b>
+                    <p>French mathematician Blaise Pascal (1623-1662) contributed significantly to the binomial theorem.
+                        He developed "Pascal's Triangle," which provides an easy way to calculate binomial coefficients.
+                    </p>
+                </li>
+                <li>
+                    <b>Isaac Newton:</b>
+                    <p>Isaac Newton (1643-1727) generalized the binomial theorem to include fractional and negative
+                        exponents. His work laid the foundation for modern calculus and analysis.</p>
+                </li>
+                <li>
+                    <b>18th Century:</b>
+                    <p>Swiss mathematician Jakob Bernoulli (1654-1705) expanded on Newton's work, providing more
+                        rigorous proofs and applications of the binomial theorem.</p>
+                </li>
+                <li>
+                    <b>Modern Mathematics:</b>
+                    <p>In contemporary mathematics, the binomial theorem is a fundamental concept in algebra,
+                        combinatorics, and calculus. It is used in various fields, including probability theory,
+                        computer science, and engineering.</p>
+                </li>
+            </ul>
+            <p>Formula of the Binomial Theorem:</p>
+            <p>The binomial theorem states that for any positive integer <i>n</i> and any numbers <i>a</i> and <i>b</i>,
+                the expansion of (a + b)<sup>n</sup> is given by:</p>
+            <p>(a + b)<sup>n</sup> = Σ (n choose k) a<sup>n-k</sup> b<sup>k</sup>, where 0 ≤ k ≤ n</p>
+            <p>Here, Σ denotes the sum over all values of <i>k</i> from 0 to <i>n</i>, and (n choose k) is the binomial
+                coefficient, calculated as:</p>
+            <p>(n choose k) = n! / (k!(n - k)!)</p>
+        </section>
+
+
+        <section id="statement">
+            <h2>Statement of Binomial Theorem</h2>
+            <p>The binomial theorem provides a formula for expanding powers of binomials. It states that for any
+                non-negative integer <i>n</i> and any numbers <i>a</i> and <i>b</i>, the expansion of (a +
+                b)<sup>n</sup> can be expressed as a sum of terms of the form C(n, k) * a<sup>n-k</sup> * b<sup>k</sup>,
+                where C(n, k) is a binomial coefficient.</p>
+            <p><b>Formula:</b></p>
+            <p>(a + b)<sup>n</sup> = Σ (n choose k) a<sup>n-k</sup> b<sup>k</sup></p>
+            <p>Where:</p>
+            <ul>
+                <li>Σ denotes the sum over all values of <i>k</i> from 0 to <i>n</i></li>
+                <li>(n choose k) is the binomial coefficient, calculated as:</li>
+            </ul>
+            <p>(n choose k) = n! / (k!(n - k)!)</p>
+            <p>Here, <i>n!</i> (n factorial) is the product of all positive integers up to <i>n</i>, and <i>k!</i> (k
+                factorial) is the product of all positive integers up to <i>k</i>.</p>
+
+            <p><b>Examples:</b></p>
+            <p>1. Expand (a + b)<sup>3</sup>:</p>
+            <p>(a + b)<sup>3</sup> = (3 choose 0) a<sup>3</sup> b<sup>0</sup> + (3 choose 1) a<sup>2</sup> b<sup>1</sup>
+                + (3 choose 2) a<sup>1</sup> b<sup>2</sup> + (3 choose 3) a<sup>0</sup> b<sup>3</sup></p>
+            <p>= 1*a<sup>3</sup> + 3*a<sup>2</sup>b + 3*ab<sup>2</sup> + 1*b<sup>3</sup></p>
+            <p>= a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + b<sup>3</sup></p>
+
+            <p>2. Expand (x + y)<sup>2</sup>:</p>
+            <p>(x + y)<sup>2</sup> = (2 choose 0) x<sup>2</sup> y<sup>0</sup> + (2 choose 1) x<sup>1</sup> y<sup>1</sup>
+                + (2 choose 2) x<sup>0</sup> y<sup>2</sup></p>
+            <p>= 1*x<sup>2</sup> + 2*xy + 1*y<sup>2</sup></p>
+            <p>= x<sup>2</sup> + 2xy + y<sup>2</sup></p>
+
+            <p>These examples demonstrate how the binomial theorem can be used to expand expressions involving the sum
+                of two terms raised to a power.</p>
+        </section>
+
+
+        <section id="coefficients">
+            <h2>Binomial Coefficients</h2>
+            <p>Binomial coefficients are the numerical factors that multiply the terms in the expansion of a binomial
+                raised to a power, according to the binomial theorem. These coefficients are represented as C(n, k),
+                also read as "n choose k".</p>
+
+            <p><b>Definition:</b></p>
+            <p>For any non-negative integers <i>n</i> and <i>k</i>, the binomial coefficient C(n, k) is defined as:</p>
+            <p>C(n, k) = n! / (k!(n - k)!)</p>
+            <p>where <i>n!</i> (n factorial) is the product of all positive integers up to <i>n</i>, and <i>k!</i> (k
+                factorial) is the product of all positive integers up to <i>k</i>.</p>
+
+            <p><b>Properties of Binomial Coefficients:</b></p>
+            <ul>
+                <li><b>Symmetry:</b> C(n, k) = C(n, n - k)</li>
+                <li><b>Summation:</b> Σ C(n, k) = 2<sup>n</sup> for k = 0 to n</li>
+                <li><b>Recursive Formula:</b> C(n, k) = C(n - 1, k - 1) + C(n - 1, k)</li>
+                <li><b>Initial Values:</b> C(n, 0) = 1 and C(n, n) = 1 for all non-negative integers n</li>
+            </ul>
+
+            <p><b>Examples:</b></p>
+            <p>1. Calculate C(5, 2):</p>
+            <p>C(5, 2) = 5! / (2!(5 - 2)!)</p>
+            <p>= 5! / (2! * 3!)</p>
+            <p>= (5 * 4 * 3!) / (2! * 3!)</p>
+            <p>= (5 * 4) / (2 * 1)</p>
+            <p>= 10</p>
+
+            <p>2. Calculate C(6, 3):</p>
+            <p>C(6, 3) = 6! / (3!(6 - 3)!)</p>
+            <p>= 6! / (3! * 3!)</p>
+            <p>= (6 * 5 * 4 * 3!) / (3! * 3!)</p>
+            <p>= (6 * 5 * 4) / (3 * 2 * 1)</p>
+            <p>= 20</p>
+
+            <p><b>Pascal's Triangle:</b></p>
+            <p>Binomial coefficients can also be found using Pascal's Triangle. Each number in the triangle is the sum
+                of the two numbers directly above it. The <i>n</i>-th row of Pascal's Triangle contains the binomial
+                coefficients C(n, k) for k = 0 to n.</p>
+            <p>For example, the 5th row of Pascal's Triangle is: 1, 5, 10, 10, 5, 1</p>
+
+            <p>These coefficients correspond to the expansion of (a + b)<sup>5</sup>:</p>
+            <p>(a + b)<sup>5</sup> = a<sup>5</sup> + 5a<sup>4</sup>b + 10a<sup>3</sup>b<sup>2</sup> +
+                10a<sup>2</sup>b<sup>3</sup> + 5ab<sup>4</sup> + b<sup>5</sup></p>
+        </section>
+
+
+        <section id="expansion">
+            <h2>Expansion of (a + b)<sup>n</sup></h2>
+            <p>The expansion of a binomial expression \((a + b)^n\) is given by the Binomial Theorem. This theorem
+                provides a formula to expand expressions that are raised to any positive integer power.</p>
+
+            <p><b>Binomial Theorem:</b></p>
+            <p>According to the Binomial Theorem, the expansion of \((a + b)^n\) is given by:</p>
+            <p>(a + b)<sup>n</sup> = Σ C(n, k) a<sup>n-k</sup> b<sup>k</sup> for k = 0 to n</p>
+            <p>where C(n, k) is the binomial coefficient.</p>
+
+            <p>The general term in the expansion is:</p>
+            <p>T<sub>k+1</sub> = C(n, k) a<sup>n-k</sup> b<sup>k</sup></p>
+
+            <p><b>Examples:</b></p>
+
+            <p>1. Expand (a + b)<sup>3</sup>:</p>
+            <p>Using the Binomial Theorem, we get:</p>
+            <p>(a + b)<sup>3</sup> = C(3, 0) a<sup>3</sup> b<sup>0</sup> + C(3, 1) a<sup>2</sup> b<sup>1</sup> + C(3, 2)
+                a<sup>1</sup> b<sup>2</sup> + C(3, 3) a<sup>0</sup> b<sup>3</sup></p>
+            <p>= 1 * a<sup>3</sup> + 3 * a<sup>2</sup> b + 3 * a b<sup>2</sup> + 1 * b<sup>3</sup></p>
+            <p>= a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> + b<sup>3</sup></p>
+
+            <p>2. Expand (x + y)<sup>4</sup>:</p>
+            <p>(x + y)<sup>4</sup> = C(4, 0) x<sup>4</sup> y<sup>0</sup> + C(4, 1) x<sup>3</sup> y<sup>1</sup> + C(4, 2)
+                x<sup>2</sup> y<sup>2</sup> + C(4, 3) x<sup>1</sup> y<sup>3</sup> + C(4, 4) x<sup>0</sup> y<sup>4</sup>
+            </p>
+            <p>= 1 * x<sup>4</sup> + 4 * x<sup>3</sup> y + 6 * x<sup>2</sup> y<sup>2</sup> + 4 * x y<sup>3</sup> + 1 *
+                y<sup>4</sup></p>
+            <p>= x<sup>4</sup> + 4x<sup>3</sup>y + 6x<sup>2</sup>y<sup>2</sup> + 4xy<sup>3</sup> + y<sup>4</sup></p>
+
+            <p><b>Special Cases:</b></p>
+
+            <ul>
+                <li><b>Square of a Binomial:</b> (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></li>
+                <li><b>Cube of a Binomial:</b> (a + b)<sup>3</sup> = a<sup>3</sup> + 3a<sup>2</sup>b + 3ab<sup>2</sup> +
+                    b<sup>3</sup></li>
+            </ul>
+
+            <p>The coefficients of the terms in the expansion follow the pattern of Pascal's Triangle. Each row of
+                Pascal's Triangle corresponds to the coefficients of the expanded form of (a + b)<sup>n</sup>.</p>
+        </section>
+
+
+        <section id="factorial">
+            <h2>Factorial Notation</h2>
+            <p>Factorial notation, denoted by <b>n!</b>, represents the product of all positive integers from 1 to n. It
+                is a fundamental concept in combinatorics, probability, and algebra.</p>
+
+            <p><b>Definition:</b> The factorial of a non-negative integer n is defined as:</p>
+            <p><b>n!</b> = n × (n - 1) × (n - 2) × ... × 3 × 2 × 1, with the special case that <b>0!</b> = 1.</p>
+
+            <p><b>Examples:</b></p>
+            <ul>
+                <li><b>5!</b> = 5 × 4 × 3 × 2 × 1 = 120</li>
+                <li><b>4!</b> = 4 × 3 × 2 × 1 = 24</li>
+                <li><b>3!</b> = 3 × 2 × 1 = 6</li>
+                <li><b>2!</b> = 2 × 1 = 2</li>
+                <li><b>1!</b> = 1</li>
+                </li>
+                <li><b>0!</b> = 1</li>
+            </ul>
+
+            <p><b>Properties of Factorials:</b></p>
+            <ul>
+                <li><b>Recursive Relation:</b> n! = n × (n - 1)!</li>
+                <li><b>Relationship with Combinations:</b> Factorials are crucial in calculating combinations. For
+                    example, the number of ways to choose k items from n is given by:</li>
+                <p>C(n, k) = n! / (k! (n - k)!)</p>
+                <li><b>Growth Rate:</b> Factorials grow very quickly as n increases. For instance, 10! = 3,628,800.</li>
+            </ul>
+
+            <p><b>Applications of Factorials:</b></p>
+            <ul>
+                <li><b>Combinatorics:</b> Used in counting arrangements and selections of objects.</li>
+                <li><b>Probability:</b> Factorials are used in calculations involving permutations and combinations.
+                </li>
+                <li><b>Algebra:</b> Factorials appear in series expansions, such as Taylor series.</li>
+            </ul>
+
+            <p><b>Examples of Factorial Calculations:</b></p>
+            <p>1. Calculate 6!:</p>
+            <p>6! = 6 × 5 × 4 × 3 × 2 × 1 = 720</p>
+
+            <p>2. Calculate 7!:</p>
+            <p>7! = 7 × 6! = 7 × 720 = 5040</p>
+
+            <p>3. Calculate combinations using factorials:</p>
+            <p>How many ways can you choose 3 objects from 5?</p>
+            <p>C(5, 3) = 5! / (3! × (5 - 3)!) = 5! / (3! × 2!) = 10</p>
+
+            <p><b>Factorial Notation in Programming:</b></p>
+            <p>Factorials are commonly computed in programming using iterative or recursive functions. For example:</p>
+            <pre>
+            <code>
+            function factorial(n) {
+                if (n === 0) return 1;
+                return n * factorial(n - 1);
+            }
+            </code>
+            </pre>
+
+            <p>This function computes the factorial of a given number using recursion.</p>
+        </section>
+
+        <section id="combinatorial">
+            <h2>Combinatorial Interpretation</h2>
+            <p>The combinatorial interpretation of the binomial theorem provides a powerful framework for understanding
+                the relationships between combinatorial objects and algebraic expressions.</p>
+
+            <p>The binomial theorem states that:</p>
+            <p>(a + b)<sup>n</sup> = Σ (C(n, k) * a<sup>n-k</sup> * b<sup>k</sup>) for k = 0 to n,</p>
+            <p>where C(n, k) represents the binomial coefficient.</p>
+
+            <p><b>Combinatorial Meaning:</b> Each term in the expansion corresponds to a specific way to choose k
+                elements from a total of n elements. Here’s how:</p>
+            <ul>
+                <li><b>Choosing k from n:</b> The coefficient C(n, k) counts the number of ways to select k elements
+                    from a set of n elements.</li>
+                <li><b>Arrangement:</b> The expression a<sup>n-k</sup> represents the contribution of one type of
+                    element (e.g., "a"), while b<sup>k</sup> represents the contribution of the other type (e.g., "b").
+                </li>
+            </ul>
+
+            <p><b>Example:</< /b> Consider the expression (x + y)<sup>4</sup>. The expansion is:</p>
+            <p style="text-align: start;">
+                <code style="text-align: start;">
+            (x + y)<sup>4</sup> = C(4, 0)x<sup>4</sup>y<sup>0</sup> + C(4, 1)x<sup>3</sup>y<sup>1</sup> + 
+                                 C(4, 2)x<sup>2</sup>y<sup>2</sup> + C(4, 3)x<sup>1</sup>y<sup>3</sup> + 
+                                 C(4, 4)x<sup>0</sup>y<sup>4</sup>
+            </code>
+            </p>
+            <p>Calculating the coefficients, we have:</p>
+            <ul>
+                <li>1x<sup>4</sup>y<sup>0</sup> = x<sup>4</sup></li>
+                <li>4x<sup>3</sup>y<sup>1</sup> = 4x<sup>3</sup>y</li>
+                <li>6x<sup>2</sup>y<sup>2</sup> = 6x<sup>2</sup>y<sup>2</sup></li>
+                <li>4x<sup>1</sup>y<sup>3</sup> = 4xy<sup>3</sup></li>
+                <li>1x<sup>0</sup>y<sup>4</sup> = y<sup>4</sup></li>
+            </ul>
+
+            <p>The full expansion results in:</p>
+            <p>(x + y)<sup>4</sup> = x<sup>4</sup> + 4x<sup>3</sup>y + 6x<sup>2</sup>y<sup>2</sup> + 4xy<sup>3</sup> +
+                y<sup>4</sup>.</p>
+
+            <p><b>General Case:</b> For any (a + b)<sup>n</sup>, the combinatorial interpretation helps in determining
+                the coefficients and understanding the relationship between different powers of a and b.</p>
+
+            <p style="font-weight: 200;"><b>Visual Representation:</b> The coefficients can also be visualized using
+                Pascal's Triangle, where each
+                entry is the sum of the two entries directly above it. For example, the fourth row of Pascal's Triangle
+                is:</p>
+            <pre>
+            <code>
+                1
+               1  1
+              1  2  1
+             1  3  3  1
+            1  4  6  4  1
+            </code>
+            </pre>
+
+            <p style="font-weight: 200;">These coefficients correspond to the coefficients of (a + b)<sup>n</sup> for n
+                = 0, 1, 2, 3, and 4.</p>
+
+            <p style="font-weight: 200;"><b>Applications:</b> Understanding the combinatorial interpretation of the
+                binomial theorem is crucial in
+                various fields such as probability theory, combinatorial optimization, and algebra.</p>
+
+            <p style="font-weight: 200;">In summary, the binomial theorem not only provides a way to expand expressions
+                but also offers deep
+                insights into the combinatorial nature of mathematics.</p>
+        </section>
+
+
+        <section id="particular-term">
+            <h2>Finding a Particular Term</h2>
+            <p>Theory related to finding a particular term with an input form for calculation.</p>
+            <form id="particular-term-form">
+                <label for="a">Value of a:</label>
+                <input type="number" id="a" name="a" required>
+                <label for="b">Value of b:</label>
+                <input type="number" id="b" name="b" required>
+                <label for="n">Value of n:</label>
+                <input type="number" id="n" name="n" required>
+                <label for="k">Term (k):</label>
+                <input type="number" id="k" name="k" required>
+                <button type="button" onclick="calculateParticularTerm()">Calculate</button>
+            </form>
+            <p id="particular-term-result"></p>
+        </section>
+
+        <section id="middle-term">
+            <h2>Finding the Middle Term</h2>
+            <p>Theory related to finding the middle term with an input form for calculation.</p>
+            <form id="middle-term-form">
+                <label for="a-middle">Value of a:</label>
+                <input type="number" id="a-middle" name="a-middle" required>
+                <label for="b-middle">Value of b:</label>
+                <input type="number" id="b-middle" name="b-middle" required>
+                <label for="n-middle">Value of n:</label>
+                <input type="number" id="n-middle" name="n-middle" required>
+                <button type="button" onclick="calculateMiddleTerm()">Calculate</button>
+            </form>
+            <p id="middle-term-result"></p>
+        </section>
+
+        <section id="multinomial">
+            <h2>Multinomial Theorem</h2>
+            <p style="font-weight: 200;">The multinomial theorem generalizes the binomial theorem for cases involving
+                more than two variables. It
+                provides a way to expand expressions of the form (x<sub>1</sub> + x<sub>2</sub> + ... +
+                x<sub>m</sub>)<sup>n</sup> into a sum of terms involving products of the variables.</p>
+
+            <h3>Statement of the Multinomial Theorem</h3>
+            <p>The multinomial theorem states that:</p>
+            <p>
+                (x<sub>1</sub> + x<sub>2</sub> + ... + x<sub>m</sub>)<sup>n</sup> = Σ (C(n; k<sub>1</sub>,
+                k<sub>2</sub>, ..., k<sub>m</sub>) * x<sub>1</sub><sup>k<sub>1</sub></sup> *
+                x<sub>2</sub><sup>k<sub>2</sub></sup> * ... * x<sub>m</sub><sup>k<sub>m</sub></sup>)
+            </p>
+            <p style="font-weight: 200;">where the sum is over all non-negative integer tuples (k<sub>1</sub>,
+                k<sub>2</sub>, ..., k<sub>m</sub>)
+                such that k<sub>1</sub> + k<sub>2</sub> + ... + k<sub>m</sub> = n.</p>
+
+            <h3>Multinomial Coefficient</h3>
+            <p>The multinomial coefficient is defined as:</p>
+            <p>C(n; k<sub>1</sub>, k<sub>2</sub>, ..., k<sub>m</sub>) = <b>n!</b> / (k<sub>1</sub>! * k<sub>2</sub>! *
+                ... * k<sub>m</sub>!)</p>
+
+            <h3>Example of Multinomial Expansion</h3>
+            <p style="font-weight: 200;">Consider the expression (x + y + z)<sup>3</sup>. According to the multinomial
+                theorem, the expansion is:
+            </p>
+            <p>
+                <code>
+            (x + y + z)<sup>3</sup> = Σ C(3; k<sub>1</sub>, k<sub>2</sub>, k<sub>3</sub>) * x<sup>k<sub>1</sub></sup> * y<sup>k<sub>2</sup></sup> * z<sup>k<sub>3</sub></sup>
+            </code>
+            </p>
+            <p>Calculating for k<sub>1</sub> + k<sub>2</sub> + k<sub>3</sub> = 3:</p>
+            <ul>
+                <li>k<sub>1</sub> = 3, k<sub>2</sub> = 0, k<sub>3</sub> = 0: C(3; 3, 0, 0) = 1 → x<sup>3</sup></li>
+                <li>k<sub>1</sub> = 2, k<sub>2</sub> = 1, k<sub>3</sub> = 0: C(3; 2, 1, 0) = 3 → 3x<sup>2</sup>y</li>
+                <li>k<sub>1</sub> = 2, k<sub>2</sub> = 0, k<sub>3</sub> = 1: C(3; 2, 0, 1) = 3 → 3x<sup>2</sup>z</li>
+                <li>k<sub>1</sub> = 1, k<sub>2</sub> = 2, k<sub>3</sub> = 0: C(3; 1, 2, 0) = 3 → 3xy<sup>2</sup></li>
+                <li>k<sub>1</sub> = 1, k<sub>2</sub> = 0, k<sub>3</sub> = 2: C(3; 1, 0, 2) = 3 → 3xz<sup>2</sup></li>
+                <li>k<sub>1</sub> = 0, k<sub>2</sub> = 3, k<sub>3</sub> = 0: C(3; 0, 3, 0) = 1 → y<sup>3</sup></li>
+                <li>k<sub>1</sub> = 0, k<sub>2</sub> = 2, k<sub>3</sub> = 1: C(3; 0, 2, 1) = 3 → 3y<sup>2</sup>z</li>
+                <li>k<sub>1</sub> = 0, k<sub>2</sub> = 1, k<sub>3</sub> = 2: C(3; 0, 1, 2) = 3 → 3yz<sup>2</sup></li>
+                <li>k<sub>1</sub> = 0, k<sub>2</sub> = 0, k<sub>3</sub> = 3: C(3; 0, 0, 3) = 1 → z<sup>3</sup></li>
+            </ul>
+
+            <p>The full expansion results in:</p>
+            <p>(x + y + z)<sup>3</sup> = x<sup>3</sup> + 3x<sup>2</sup>y + 3x<sup>2</sup>z + 3xy<sup>2</sup> +
+                3xz<sup>2</sup> + y<sup>3</sup> + 3y<sup>2</sup>z + 3yz<sup>2</sup> + z<sup>3</sup>.</p>
+
+            <h3>General Formulation</h3>
+            <p style="font-weight: 200;">For any set of m variables and an integer n, the multinomial theorem provides a
+                systematic method to
+                calculate all possible combinations of these variables raised to the power n.</p>
+
+            <h3>Applications of the Multinomial Theorem</h3>
+            <p style="font-weight: 200;">The multinomial theorem has significant applications in various fields,
+                including:</p>
+            <ul style="font-weight: 200;">
+                <li><b>Probability Theory:</b> Used in multinomial distributions to model outcomes with multiple
+                    categories.</li>
+                <li><b>Combinatorics:</b> Essential for counting problems and analyzing combinations of objects.</li>
+                <li><b>Algebra:</b> Helps in simplifying complex algebraic expressions involving multiple variables.
+                </li>
+            </ul>
+
+            <p style="font-weight: 200;">In summary, the multinomial theorem extends the concept of binomial expansions
+                to multiple variables,
+                providing valuable insights into combinatorial structures and algebraic relationships.</p>
+        </section>
+
+        <section id="fractional-negative">
+            <h2>Binomial Expansion for Fractional and Negative Indices</h2>
+            <p style="font-weight: 200;">The binomial expansion can be extended to include fractional and negative
+                indices, allowing for the
+                expansion of expressions in the form of (a + b)<sup>n</sup>, where n can be a negative number or a
+                fraction.</p>
+
+            <h3>General Statement</h3>
+            <p style="font-weight: 200;">For any real number n, the binomial expansion can be expressed as:</p>
+            <p>
+                (a + b)<sup>n</sup> = Σ (C(n; k) * a<sup>n-k</sup> * b<sup>k</sup>)
+            </p>
+            <p style="font-weight: 200;">where the sum is taken from k = 0 to ∞, and the binomial coefficient C(n; k) is
+                defined as:</p>
+            <p>
+                C(n; k) = <b>n! / (k! * (n - k)!)</b> for integer k, or using Gamma function for non-integers.
+            </p>
+
+            <h3>Handling Fractional Indices</h3>
+            <p style="font-weight: 200;">When n is a fraction, for example, n = 1/2, the expansion is valid for |b/a| <
+                    1. An example is:</p>
+                    <p>
+                        <code>
+            (1 + x)<sup>1/2</sup> = 1 + (1/2)x - (1/8)x<sup>2</sup> + (1/16)x<sup>3</sup> - ...
+            </code>
+                    </p>
+
+                    <h3>Handling Negative Indices</h3>
+                    <p style="font-weight: 200;">When n is a negative integer, the expansion involves infinite series.
+                        For instance, for n = -1:
+                    </p>
+                    <p>
+                        <code>
+            (1 + x)<sup>-1</sup> = 1 - x + x<sup>2</sup> - x<sup>3</sup> + ...
+            </code>
+                    </p>
+                    <p>This series converges for |x| < 1.</p>
+
+                            <h3>Example of Binomial Expansion with Negative Indices</h3>
+                            <p style="font-weight: 200;">Consider the expression (1 - x)<sup>-3</sup>. Using the
+                                binomial theorem, we can expand
+                                this as:</p>
+                            <p>
+                                <code>
+            (1 - x)<sup>-3</sup> = Σ C(-3; k)(-x)<sup>k</sup> = 1 + 3x + 6x<sup>2</sup> + 10x<sup>3</sup> + ...
+            </code>
+                            </p>
+
+                            <h3>Binomial Coefficient for Negative Indices</h3>
+                            <p style="font-weight: 200;">For negative indices, the binomial coefficients can be computed
+                                using:</p>
+                            <p>
+                                C(n; k) = (-1)<sup>k</sup> * C(|n| + k - 1; k)
+                            </p>
+
+                            <h3>Conditions for Convergence</h3>
+                            <p style="font-weight: 200;">When expanding using fractional or negative indices, the series
+                                converges only under
+                                certain conditions. Typically, for (a + b)<sup>n</sup>, it is required that:</p>
+                            <ul style="font-weight: 200;">
+                                <li>|b/a| < 1 for fractional indices.</li>
+                                <li>|x| < 1 for negative indices.</li>
+                            </ul>
+
+                            <h3>Applications</h3>
+                            <p style="font-weight: 200;">The binomial expansion for fractional and negative indices is
+                                crucial in various fields:
+                            </p>
+                            <ul style="font-weight: 200;">
+                                <li><b>Calculus:</b> Useful in Taylor series expansions and approximations.</li>
+                                <li><b>Physics:</b> Important in various applications like fluid dynamics and wave
+                                    functions.</li>
+                                <li><b>Finance:</b> Helps in modeling growth rates and compound interest calculations.
+                                </li>
+                            </ul>
+
+                            <h3>Conclusion</h3>
+                            <p style="font-weight: 200;">The binomial expansion for fractional and negative indices
+                                extends the applicability of
+                                the binomial theorem, enabling us to work with a broader range of mathematical
+                                expressions and problems.</p>
+        </section>
+
+        <section id="applications">
+            <h2>Applications of Binomial Theorem</h2>
+
+            <h3>In Probability</h3>
+            <p>The binomial theorem plays a crucial role in probability theory, particularly in binomial distributions.
+                It helps in calculating the probabilities of a fixed number of successes in a fixed number of
+                independent Bernoulli trials.</p>
+            <p>For example, the probability of obtaining exactly k successes in n trials can be expressed using the
+                binomial coefficient:</p>
+            <p>
+                P(X = k) = C(n; k) * p<sup>k</sup> * (1 - p)<sup>n - k</sup>
+            </p>
+            <p>where p is the probability of success on an individual trial.</p>
+
+            <h3>In Algebraic Expression</h3>
+            <p>The binomial theorem simplifies the expansion of algebraic expressions raised to a power. It allows for
+                the straightforward calculation of (a + b)<sup>n</sup> without needing to multiply the expression out
+                directly.</p>
+            <p>For instance, (x + 2)<sup>4</sup> can be expanded as:</p>
+            <p>
+                <code>
+            (x + 2)<sup>4</sup> = Σ C(4; k) * x<sup>4 - k</sup> * 2<sup>k</sup> = x<sup>4</sup> + 8x<sup>3</sup> + 24x<sup>2</sup> + 32x + 16
+            </code>
+            </p>
+
+            <h3>In Series Sum</h3>
+            <p>The binomial theorem is instrumental in calculating the sums of series. It allows the evaluation of sums
+                that can be expressed in binomial form. For example:</p>
+            <p>If we want to find the sum of the first n natural numbers, we can derive it using:</p>
+            <p>
+                S = 1 + 2 + ... + n = Σ k = Σ C(n; k) * (1)<sup>k</sup>
+            </p>
+
+            <h3>In Binomial Approximation</h3>
+            <p>The binomial theorem is used for approximating expressions involving powers, especially when n is a large
+                number or involves fractions. For small x, we can approximate (1 + x)<sup>n</sup> using:</p>
+            <p>
+                (1 + x)<sup>n</sup> ≈ 1 + nx
+            </p>
+            <p>This approximation is particularly useful in calculus and numerical analysis.</p>
+
+            <h3>In Finance</h3>
+            <p>The binomial theorem is widely applied in finance, particularly in option pricing models. For instance,
+                the binomial options pricing model utilizes the theorem to calculate the future price movements of an
+                asset:</p>
+            <p>
+                Option Price = Σ C(n; k) * (Up Movement)<sup>k</sup> * (Down Movement)<sup>n - k</sup> * Payoff
+            </p>
+
+            <h3>In Computer Science</h3>
+            <p>In computer science, the binomial theorem is useful in combinatorial algorithms and complexity analysis.
+                It helps in calculating combinations and permutations efficiently:</p>
+            <p>
+                C(n; k) = n! / (k! * (n - k)!)
+            </p>
+
+            <h3>In Physics</h3>
+            <p>The theorem is also employed in physics to simplify complex expressions in mechanics and thermodynamics,
+                especially in expansions around equilibrium points.</p>
+
+            <h3>Summary of Applications</h3>
+            <p>The binomial theorem has wide-ranging applications across various fields:</p>
+            <ul>
+                <li><b>Probability:</b> In calculating probabilities of binomial distributions.</li>
+                <li><b>Algebra:</b> In simplifying polynomial expansions.</li>
+                <li><b>Series:</b> In evaluating series sums and generating functions.</li>
+                <li><b>Finance:</b> In modeling financial instruments and option pricing.</li>
+                <li><b>Computer Science:</b> In algorithm design and analysis.</li>
+                <li><b>Physics:</b> In theoretical and applied physics calculations.</li>
+            </ul>
+        </section>
+
+        <section id="formulas">
+            <h2>Important Formulas</h2>
+            <ul>
+                <li>(a + b)<sup>n</sup> = Σ C(n, k) a<sup>n-k</sup> b<sup>k</sup> (k = 0 to n)</li>
+                <li>C(n, k) = n! / [k!(n-k)!]</li>
+                <li>(a - b)<sup>n</sup> = Σ (-1)<sup>k</sup> C(n, k) a<sup>n-k</sup> b<sup>k</sup> (k = 0 to n)</li>
+                <li>(a + b + c)<sup>n</sup> = Σ C(n, k, m) a<sup>k</sup> b<sup>m</sup> c<sup>n-k-m</sup> (k + m = 0 to
+                    n)</li>
+                <li>(a + b + c + d)<sup>n</sup> = Σ C(n, k, m, l) a<sup>k</sup> b<sup>m</sup> c<sup>l</sup>
+                    d<sup>n-k-m-l</sup> (k + m + l = 0 to n)</li>
+                <li>Pascal's Triangle: C(n, k) = C(n-1, k-1) + C(n-1, k)</li>
+                <li>C(n, 0) = C(n, n) = 1</li>
+                <li>C(n, 1) = n</li>
+                <li>C(n, 2) = n(n-1)/2!</li>
+                <li>C(n, 3) = n(n-1)(n-2)/3!</li>
+                <li>General term: T<sub>k+1</sub> = C(n, k) a<sup>n-k</sup> b<sup>k</sup></li>
+                <li>Middle term: T<sub>m</sub> = C(n, m) a<sup>n-m</sup> b<sup>m</sup> where m = n/2 if n is even</li>
+                <li>Middle terms: T<sub>m1</sub> and T<sub>m2</sub> for m1 = n/2 and m2 = n/2 + 1 if n is odd</li>
+                <li>Binomial approximation: (1 + x)<sup>n</sup> ≈ 1 + nx for |x| < 1 and n large</li>
+                <li>Summation of binomial coefficients: Σ C(n, k) = 2<sup>n</sup> (k = 0 to n)</li>
+                <li>Summation of squared binomial coefficients: Σ [C(n, k)]<sup>2</sup> = C(2n, n)</li>
+                <li>Binomial identity: C(n, k) = C(n, n-k)</li>
+                <li>Binomial series: Σ (-1)<sup>k</sup> C(n, k) = 0 (k = 0 to n and n > 0)</li>
+                <li>Integral form: ∫ (a + b)<sup>n</sup> dx = (a + b)<sup>n+1</sup> / (n + 1)</li>
+                <li>Derivative form: d/dx (a + b)<sup>n</sup> = n (a + b)<sup>n-1</sup> (da/dx + db/dx)</li>
+                <li>(1 + x)<sup>-n</sup> = Σ (-1)<sup>k</sup> C(n+k-1, k) x<sup>k</sup> (k = 0 to ∞)</li>
+                <li>(1 - x)<sup>-n</sup> = Σ C(n+k-1, k) x<sup>k</sup> (k = 0 to ∞)</li>
+                <li>Multinomial theorem: (x1 + x2 + ... + xk)<sup>n</sup> = Σ (n! / (k1! k2! ... kk!)) x1<sup>k1</sup>
+                    x2<sup>k2</sup> ... xk<sup>kk</sup></li>
+                <li>Generating functions: (1 - x)<sup>-n</sup> = Σ C(n+k-1, k) x<sup>k</sup> (k = 0 to ∞)</li>
+                <li>Alternating binomial sums: Σ (-1)<sup>k</sup> C(n, k) = 0</li>
+                <li>Combinatorial proof: C(n, k) = n! / [k!(n-k)!]</li>
+                <li>Lucas' theorem: C(n, k) ≡ C(n/p, k/p) C(n%p, k%p) (mod p)</li>
+                <li>Extended binomial theorem: (x + y + z)<sup>n</sup> = Σ C(n, k, m) x<sup>k</sup> y<sup>m</sup>
+                    z<sup>n-k-m</sup></li>
+                <li>Extended binomial series: (1 + x + y)<sup>-n</sup> = Σ C(n+k-1, k) x<sup>k</sup> y<sup>m</sup> (k =
+                    0 to ∞)</li>
+                <li>Hypergeometric series: (a+b)<sup>n</sup> = Σ (a choose k)(b choose n-k)</li>
+                <li>Negative binomial series: (1 - x)<sup>-n</sup> = Σ C(n+k-1, k) x<sup>k</sup></li>
+                <li>Fractional binomial series: (1 + x)<sup>p/q</sup> = Σ (p/q choose k) x<sup>k</sup></li>
+                <li>Newton's binomial series: (a + b)<sup>c</sup> = Σ C(c, k) a<sup>c-k</sup> b<sup>k</sup></li>
+                <li>Convolution identity: C(m+n, k) = Σ C(m, i) C(n, k-i)</li>
+                <li>Ratio test: (C(n, k+1)/C(n, k)) = (n-k)/(k+1)</li>
+                <li>Zeckendorf's representation: Any positive integer can be uniquely represented as a sum of one or
+                    more distinct, non-consecutive Fibonacci numbers.</li>
+                <li>Sum of powers of binomial coefficients: Σ C(n, k)<sup>r</sup> = Σ (-1)<sup>k-r</sup> C(n-r, k-r)
+                </li>
+                <li>General binomial theorem: (x + y + z + ... + w)<sup>n</sup> = Σ C(n, k1, k2, ..., kn) x<sup>k1</sup>
+                    y<sup>k2</sup> ... w<sup>kn</sup></li>
+                <li>Binomial transform: T(n, k) = Σ (-1)<sup>j</sup> C(n+j, j) (k choose j)</li>
+                <li>Sum of reciprocals: Σ 1/C(n, k) = (n+1) / [n C(n, k)]</li>
+                <li>Orthogonality: Σ C(n, k) C(n, k+l) = 0 (k ≠ l)</li>
+                <li>Sum of cubes: Σ (C(n, k))<sup>3</sup> = (2n choose n) / (n + 1)</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Binomial Theorem Website</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
